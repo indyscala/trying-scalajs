@@ -12,4 +12,8 @@
     cd trying-scalajs
     sbt ~pwnedJS/fastOptJS
 
-Then open [pwned-dev.html](pwned-dev.html) in a browser as well as the browser developer tools.
+Then open [pwned-dev.html](pwned-dev.html) in a browser as well as the browser developer tools.  For example, with:
+
+    open ./pwned-dev.html
+
+in a separate terminal from sbt.
