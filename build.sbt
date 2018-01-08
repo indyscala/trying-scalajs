@@ -10,18 +10,23 @@ licenses := Seq(
   "MIT" -> url("http://opensource.org/licenses/MIT")
 ) 
 
+val circeVersion = "0.9.0"
+
 lazy val pwned =
   crossProject(JSPlatform, JVMPlatform)
     .crossType(CrossType.Full)
     .settings(
       libraryDependencies ++= Seq(
-        "io.circe" %%% "circe-core" % "0.9.0"
+        "io.circe" %%% "circe-core" % circeVersion,
+        "io.circe" %%% "circe-generic" % circeVersion,
+        "io.circe" %%% "circe-parser" % circeVersion,
       ),
     )
     .jsSettings(
       name := "pwned-app",
       libraryDependencies ++= Seq(
-        "org.scala-js" %%% "scalajs-dom" % "0.9.4"
+        "org.scala-js" %%% "scalajs-dom" % "0.9.4",
+        "com.lihaoyi" %%% "scalatags" % "0.6.7",
       ),
     )
     .jvmSettings(
